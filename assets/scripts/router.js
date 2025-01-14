@@ -1,0 +1,39 @@
+const router = {
+ "#/404":{
+    template:"assets/pages/notthefound.html",
+    title:"404"
+ },
+ "#/index.html":{
+    template:"index.html",
+    title:"Home"
+ },
+ "#/":{
+    template:"index.html",
+    title:"Home"
+ },
+ "#/geners":{
+    template:"assets/pages/geners.html",
+    title:"Geners"
+ },
+ "#/albums":{
+    template:"assets/pages/albums.html",
+    title:"Albums"
+ },
+ "#/artist":{
+    template:"assets/pages/artist.html",
+    title:"Artist"
+ },
+ "#/Favourites":{
+    template:"assets/pages/fav.html",
+    title:"Favourites"
+ },
+ "#/Popular":{
+    template:"assets/pages/popular.html",
+    title:"Popular"
+ },
+ "#/playlist":{
+    template:"assets/pages/myplaylist.html",
+    title:"My Playlist"
+ }
+}
+export default router;

@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@theme {
+  --color-red-one: #f9330e;
+  --color-black-one: #161618;
+  --color-red-two: #fd642c5a;
+  --color-red-three: #fd642c22;
+  --color-wite-one: #ffffff;
+  --spacing-30-p: 30%;
+  --spacing-70-p: 70%;
+}
+span,
+svg,
+use {
+  pointer-events: none;
+}
+a>div{
+    pointer-events: none;
+}
