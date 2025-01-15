@@ -1,42 +1,5 @@
-// import router from "./router.js";
-const router = {
-  "#/index.html":{
-    template:"index.html",
-    title:"Home"
-  },
-  "#/":{
-    template:"index.html",
-     title:"Home"
-  },
-  "#/geners":{
-     template:"assets/pages/geners.html",
-     title:"Geners"
-  },
-  "#/albums":{
-     template:"assets/pages/albums.html",
-     title:"Albums"
-    },
-  "#/artist":{
-    template:"assets/pages/artist.html",
-     title:"Artist"
-  },
-  "#/Favourites":{
-     template:"assets/pages/fav.html",
-     title:"Favourites"
-  },
-  "#/Popular":{
-    template:"assets/pages/popular.html",
-    title:"Popular"
-  },
-  "#/playlist":{
-    template:"assets/pages/myplaylist.html",
-    title:"My Playlist"
-  },
-  "#/404":{
-     template:"assets/pages/notthefound.html",
-     title:"404"
-  }
-}
+import router from "./router.js";
+const progres =document.querySelectorAll('.progres>div')
  function locationHandler(a) {
 
  const rout =  router[a];
@@ -69,3 +32,14 @@ document.addEventListener("click", (e) => {
 
 window.onpopstate = locationHandler;
 window.addEventListener('hashchange', locationHandler);
+function randomHeight() {
+  let x = Math.floor(Math.random()*16)
+  return x + 1
+}
+function progresHeight() {
+  progres.forEach(span=>{
+    span.style.height=randomHeight()+"px"
+  })
+  
+}
+progresHeight()

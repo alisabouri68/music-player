@@ -8,204 +8,368 @@
     <title>Music Player</title>
 </head>
 
-<body class="overflow-x-hidden  bg-black-one">
-   <div class="w-full  flex" id="content">
-     <!-- SVG Sprite -->
-     <svg class="hidden">
-        <symbol id="home" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-        </symbol>
-        <symbol id="geners" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
-        </symbol>
-        <symbol id="albums" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
-        </symbol>
+<body class="overflow-x-hidden bg-black-one">
+    <div class="w-full flex" id="content">
+        <!-- SVG Sprite -->
+        <svg class="hidden">
+            <symbol id="home" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </symbol>
+            <symbol id="geners" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+            </symbol>
+            <symbol id="albums" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+            </symbol>
 
-        <symbol id="artist" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-        </symbol>
-        <symbol id="fav" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-          </symbol>
-          
-          <symbol id="playlist" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
-          </symbol>
-          <symbol id="star" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-          </symbol>
-          <symbol id="popular" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-          </symbol>
-          
-    </svg>
-    <header class="w-30-p grid grid-cols-1 grid-rows-1 py-4 pr-4">
-        <div class="w-full grid grid-flow-col grid-rows-4 gap-5">
-            <!-- Logo & Registered Name -->
-            <div class="grid grid-cols-1 grid-rows-1 pl-8 relative">
-                <div class="flex justify-start items-center">
-                    <figure>
-                        <img src="assets/img/Group1.png" width="79" height="79" alt="">
-                    </figure>
-                </div>
-                <div>
-                    <div>
-                        <span class="text-wite-one opacity-50 text-2xl">Hi</span>
+            <symbol id="artist" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+            </symbol>
+            <symbol id="fav" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </symbol>
+
+            <symbol id="playlist" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
+            </symbol>
+            <symbol id="star" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+            </symbol>
+            <symbol id="popular" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+            </symbol>
+            <symbol id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd"
+                    d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+                    clip-rule="evenodd" />
+            </symbol>
+
+
+        </svg>
+        <header class="w-30-p grid grid-cols-1 grid-rows-1 py-4 pr-4">
+            <div class="w-full grid grid-flow-col grid-rows-4 gap-5">
+                <!-- Logo & Registered Name -->
+                <div class="grid grid-cols-1 grid-rows-1 pl-8 relative">
+                    <div class="flex justify-start items-center">
+                        <figure>
+                            <img src="assets/img/Group1.png" width="79" height="79" alt="">
+                        </figure>
                     </div>
                     <div>
-                        <span class="registername text-wite-one text-4xl font-semibold">
-                            You are not registered
-                        </span>
+                        <div>
+                            <span class="text-wite-one opacity-50 text-2xl">Hi</span>
+                        </div>
+                        <div>
+                            <span class="registername text-wite-one text-4xl font-semibold">
+                                You are not registered
+                            </span>
+                        </div>
                     </div>
+                    <div class="absolute top-0 left-0 bg-transparent w-34 h34 rounded-full z-[-10] opacity-15"
+                        style="box-shadow: 0 0 500px 100px #f9310e;"></div>
                 </div>
-                <div class="absolute top-0 left-0 bg-transparent w-34 h34 rounded-full z-[-10] opacity-15"
-                    style="box-shadow: 0 0 500px 100px #f9310e;"></div>
-            </div>
-            <!-- Menu -->
+                <!-- Menu -->
 
-            <nav class="grid grid-cols-1 grid-rows-1">
-                <ul class="grid">
-                    <li class="grid gap-5">
-                        <span class="text-xl text-wite-one">
-                           &nbsp; &nbsp;&nbsp; &nbsp;Menu
-                        </span>
-                        <ul class="grid grid-cols-1 grid-rows-4  *:flex *:border-l-8 *:border-l-transparent *:hover:bg-linear-to-r *:hover:from-red-two *:hover:via-red-three *:hover:border-l-red-600">
-                            <li class="bg-linear-to-r
+                <nav class="grid grid-cols-1 grid-rows-1">
+                    <ul class="grid">
+                        <li class="grid gap-5">
+                            <span class="text-xl text-wite-one">
+                                &nbsp; &nbsp;&nbsp; &nbsp;Menu
+                            </span>
+                            <ul
+                                class="grid grid-cols-1 grid-rows-4  *:flex *:border-l-8 *:border-l-transparent *:hover:bg-linear-to-r *:hover:from-red-two *:hover:via-red-three *:hover:border-l-red-600">
+                                <li class="bg-linear-to-r
                             from-red-two
                             via-red-three
                             !border-l-red-600
                             border-l-8">
-                                <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/" data-route="#/">
-                                    <div>
-                                        <span>
-                                            <svg class="text-wite-one group-hover:opacity-100 opacity-50 w-5 h-5">
-                                                <use href="#home"></use>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span class="text-wite-one opacity-50 group-hover:opacity-100 text-xl">Home</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/geners" data-route="#/geners">
-                                    <div>
-                                        <span>
-                                            <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
-                                                <use href="#geners"></use>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Geners</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/albums" data-route="#/albums">
-                                    <div>
-                                        <span>
-                                            <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
-                                                <use href="#albums"></use>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Albums</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/artist" data-route="#/artist">
-                                    <div>
-                                        <span>
-                                            <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
-                                                <use href="#artist"></use>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Artist</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="grid grid-cols-1 grid-rows-1">
-                <ul class="grid">
-                    <li class="grid gap-5">
-                        <span class="text-xl text-wite-one">
-                           &nbsp; &nbsp;&nbsp; &nbsp;Library
-                        </span>
-                        <ul class="grid grid-cols-1 grid-rows-4 *:flex *:border-l-8 *:border-l-transparent *:hover:bg-linear-to-r *:hover:from-red-two *:hover:via-red-three *:hover:border-l-red-600">
-                            <li>
-                                <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/Favourites" data-route="#/Favourites">
-                                    <div>
-                                        <span>
-                                            <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
-                                                <use href="#star"></use>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div style="color: #fd642c22;">
-                                        <span class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Favourites</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/Popular" data-route="#/Popular">
-                                    <div>
-                                        <span>
-                                            <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
-                                                <use href="#popular"></use>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Popular</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/playlist" data-route="#/playlist">
-                                    <div>
-                                        <span>
-                                            <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
-                                                <use href="#playlist"></use>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div class="">
-                                        <span class="text-wite-one opacity-50 text-xl group-hover:opacity-100">My Playlist</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="grid grid-cols-1 grid-rows-1">04</div>
-        </div>
-    </header>
-    <main class="w-70-p">
+                                    <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/"
+                                        data-route="#/">
+                                        <div>
+                                            <span>
+                                                <svg class="text-wite-one group-hover:opacity-100 opacity-50 w-5 h-5">
+                                                    <use href="#home"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="text-wite-one opacity-50 group-hover:opacity-100 text-xl">Home</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/geners"
+                                        data-route="#/geners">
+                                        <div>
+                                            <span>
+                                                <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
+                                                    <use href="#geners"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Geners</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/albums"
+                                        data-route="#/albums">
+                                        <div>
+                                            <span>
+                                                <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
+                                                    <use href="#albums"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Albums</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/artist"
+                                        data-route="#/artist">
+                                        <div>
+                                            <span>
+                                                <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
+                                                    <use href="#artist"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Artist</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="grid grid-cols-1 grid-rows-1">
+                    <ul class="grid">
+                        <li class="grid gap-5">
+                            <span class="text-xl text-wite-one">
+                                &nbsp; &nbsp;&nbsp; &nbsp;Library
+                            </span>
+                            <ul
+                                class="grid grid-cols-1 grid-rows-4 *:flex *:border-l-8 *:border-l-transparent *:hover:bg-linear-to-r *:hover:from-red-two *:hover:via-red-three *:hover:border-l-red-600">
+                                <li>
+                                    <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/Favourites"
+                                        data-route="#/Favourites">
+                                        <div>
+                                            <span>
+                                                <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
+                                                    <use href="#star"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div style="color: #fd642c22;">
+                                            <span
+                                                class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Favourites</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/Popular"
+                                        data-route="#/Popular">
+                                        <div>
+                                            <span>
+                                                <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
+                                                    <use href="#popular"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="text-wite-one opacity-50 text-xl group-hover:opacity-100">Popular</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link flex items-center gap-5 pl-5 py-1 w-full group" href="#/playlist"
+                                        data-route="#/playlist">
+                                        <div>
+                                            <span>
+                                                <svg class="text-wite-one opacity-50 w-5 h-5 group-hover:opacity-100">
+                                                    <use href="#playlist"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div class="">
+                                            <span class="text-wite-one opacity-50 text-xl group-hover:opacity-100">My
+                                                Playlist</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="grid p-3 relative">
+                    <div class="bg-stone-700 rounded-4xl  w-full flex items-start pt-5 px-2">
+                        <div class="w-full flex justify-center items-center gap-3">
+                            <div>
+                                <span class="text-gray-200 text-xs">20:00</span>
+                            </div>
+                            <div
+                                class="progres flex justify-center items-center gap-1 cursor-pointer *:cursor-pointer *:min-w-0.5 *:max-w-0.5 *:bg-gray-100 *:flex ">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div>
+                                <span class="text-gray-200 text-xs">20:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#F9330E] flex  items-center  rounded-4xl h-[60%] w-full absolute top-[45%]">
+                        <div class=" rounded-full w-16 h-16 bg-stone-700 absolute top-0 left-[50%] p-3"
+                            style="transform: translate(-50% , -50%);">
+                            <button
+                                class="playerbtn rounded-full w-full h-full bg-[#CC2000] flex justify-center items-center relative">
+                                <span class="">
+                                    <svg class="size-6 text-wite-one ">
+                                        <use href="#play">
 
-    </main>
-    <script type="module" src="assets/scripts/SPA.js"></script>
+                                        </use>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="flex justify-around items-center w-full">
+                            <div>
+                                <figure>
+                                    <img src="assets/img/Rectangle 8.png" alt="">
+                                </figure>
+                            </div>
+                            <div>
+                                <div>
+                                    <h4 class="text-wite-one">
+                                        Life of Bachelor....
+                                    </h4>
+                                </div>
+                                <div>
+                                    <h6 class="text-wite-one opacity-50">
+                                        Bachelor
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="w-70-p p-3 flex">
+            <section class="bg-wite-one rounded-4xl w-full p-2 grid">
+                <div class="flex w-full">
+                    <div class="p-3 w-[60%]">
+                        <div class="rounded-4xl flex bg-[#F9330E] p-4">
+                            <div class="grid">
+                                <div>
+                                    <h1 class="text-wite-one opacity-50 text-[1vw]">SoundCloud</h1>
+                                </div>
+                                <div>
+                                    <h2 class="text-wite-one text-[2vw] font-semibold">Listen to latest trending Music all time</h2>
+                                </div>
+                                <div>
+                                    <p class="text-wite-one opacity-50 text-[1vw]">With SoundCloud, you can get permium
+                                        quality music for free trial-14 days</p>
+                                </div>
+                                <div>
+                                    <a class="rounded-4xl bg-wite-one inline-block px-3 py-2" href="#">
+                                        <div>
+                                            <span class="text-wite-one "></span>
+                                        </div>
+                                        <div>
+                                            <span class="text-[#F9330E] font-semibold text-[1vw]">Listen Now</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <figure class="h-full">
+                                    <img class="h-[130%] translate-y-[-18.5%] object-cover" src="assets/img/q.png" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- wefergwrhwrhetyjht3yjhhtyj -->
+                    <div class="p-3 w-[40%]">
+                        <div class="rounded-4xl flex w-full bg-[#F9330E] overflow-hidden">
+                            <div class="flex w-full h-full backg pt-16 px-5 pb-5">
+                                <div class="flex justify-center items-end">
+                                    <div>
+                                        <p class="text-wite-one opacity-70 text-[1.5vw]">Subscribe To Premium Now
+                                            With SoundCloud</p>
+                                    </div>
+                                    <div>
+                                        <figure>
+                                            <img src="assets/img/Group1.png" width="79" height="79" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div>
 
-   </div>
+                </div>
+            </section>
+        </main>
+        <script type="module" src="assets/scripts/SPA.js"></script>
+
+    </div>
 </body>
 
 </html>
