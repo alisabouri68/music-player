@@ -529,6 +529,9 @@
   }
 }
 @layer utilities {
+  .collapse {
+    visibility: collapse;
+  }
   .absolute {
     position: absolute;
   }
@@ -550,6 +553,9 @@
   .z-\[-10\] {
     z-index: -10;
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -559,8 +565,20 @@
   .hidden {
     display: none;
   }
+  .inline {
+    display: inline;
+  }
   .inline-block {
     display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .list-item {
+    display: list-item;
+  }
+  .table {
+    display: table;
   }
   .size-6 {
     width: calc(var(--spacing) * 6);
@@ -605,6 +623,9 @@
   .w-full {
     width: 100%;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
   .translate-y-\[-18\.5\%\] {
     --tw-translate-y: -18.5%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -614,6 +635,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .grid-flow-col {
     grid-auto-flow: column;
@@ -665,6 +689,10 @@
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .border-l-8 {
     border-left-style: var(--tw-border-style);
@@ -792,9 +820,6 @@
   .text-\[2vw\] {
     font-size: 2vw;
   }
-  .text-\[3vw\] {
-    font-size: 3vw;
-  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
@@ -823,6 +848,9 @@
   .text-wite-one {
     color: var(--color-wite-one);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .opacity-15 {
     opacity: 15%;
   }
@@ -831,6 +859,10 @@
   }
   .opacity-70 {
     opacity: 70%;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .\*\:flex {
     :is(& > *) {
@@ -974,6 +1006,7 @@ a > div {
       --tw-gradient-via-position: 50%;
       --tw-gradient-to-position: 100%;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
@@ -1093,4 +1126,9 @@ a > div {
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
