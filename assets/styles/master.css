@@ -165,3 +165,10 @@ a > div {
   }
 
 }
+*::-webkit-scrollbar {
+  width: 0 !important;
+}
+*{
+  -ms-overflow-style: none;
+  -ms-overflow-style: none;
+}

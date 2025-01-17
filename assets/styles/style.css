@@ -1136,6 +1136,13 @@ a > div {
     text-shadow: 0px 0px 5px var(--four-x);
   }
 }
+*::-webkit-scrollbar {
+  width: 0 !important;
+}
+* {
+  -ms-overflow-style: none;
+  -ms-overflow-style: none;
+}
 @supports (-moz-orient: inline) {
   @layer base {
     *, ::before, ::after, ::backdrop {
