@@ -659,36 +659,36 @@ const xxx = [
     img: "https://www.ahangimo.com/cdn/tracks-cover/1403/06/1428172491342147301724913421118217249134211745.webp",
     artist: "Hayde",
   },
-  // {
-  //     template:"",
-  //     song:"",
-  //     img:"",
-  //     artist:"Mahasti"
-  // },
-  // {
-  //     template:"",
-  //     song:"",
-  //     img:"",
-  //     artist:"Mahasti"
-  // },
-  // {
-  //     template:"",
-  //     song:"",
-  //     img:"",
-  //     artist:"Mahasti"
-  // },
-  // {
-  //     template:"",
-  //     song:"",
-  //     img:"",
-  //     artist:"Mahasti"
-  // },
-  // {
-  //     template:"",
-  //     song:"",
-  //     img:"",
-  //     artist:"Mahasti"
-  // },
+  {
+      template:"https://www.ahangimo.com/cdn/tracks-mp3/1403/06/4587172492055996891724920559761517249205592369.mp3",
+      song:"دل کوچولو",
+      img:"https://www.ahangimo.com/cdn/tracks-cover/1403/06/9469172492055975201724920559158717249205594157.webp",
+      artist:"Mahasti"
+  },
+  {
+      template:"https://www.ahangimo.com/cdn/tracks-mp3/1403/06/2602172489518736001724895187501717248951872907.mp3",
+      song:"امتحان",
+      img:"https://www.ahangimo.com/cdn/tracks-cover/1403/06/8252172489518744041724895187888917248951879492.webp",
+      artist:"Mahasti"
+  },
+  {
+      template:"https://www.ahangimo.com/cdn/tracks-mp3/1403/06/6859172492049473581724920494431817249204944378.mp3",
+      song:"شب عید",
+      img:"https://www.ahangimo.com/cdn/tracks-cover/1403/06/3268172492049425501724920494931017249204949358.webp",
+      artist:"Mahasti"
+  },
+  {
+      template:"https://www.ahangimo.com/cdn/tracks-mp3/1403/06/4637172489179717201724891797922617248917978284.mp3",
+      song:"وقتی رفتم",
+      img:"https://www.ahangimo.com/cdn/tracks-cover/1403/06/4226172489179713201724891797949117248917975029.webp",
+      artist:"Mahasti"
+  },
+  {
+      template:"https://www.ahangimo.com/cdn/tracks-mp3/1403/06/9861172489340745641724893407238717248934078588.mp3",
+      song:"دنیا",
+      img:"https://www.ahangimo.com/cdn/tracks-cover/1403/06/5273172489340784741724893407410717248934078926.webp",
+      artist:"Mahasti"
+  },
 ];
 
 export default xxx;
