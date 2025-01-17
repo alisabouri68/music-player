@@ -84,7 +84,7 @@ function terends() {
                                 </div>
   `;
   
-    // terend.appendChild(a);
+    terend.appendChild(a);
 
   });
 }
@@ -179,78 +179,78 @@ function artistsadd() {
     })
 }
 artistsadd()
-function artistselectchild() {
-  artistEelectE.innerHTML = null
-    let as = this.getAttribute("data-name")
-    let x = []
-    let y = []
-    xxx.map((items,i) =>{
-        if(items.artist == as){
-            x=[]
-            x.push(xxx[i])
-  console.log(x)
+// function artistselectchild() {
+//   artistEelectE.innerHTML = null
+//     let as = this.getAttribute("data-name")
+//     let x = []
+//     let y = []
+//     xxx.map((items,i) =>{
+//         if(items.artist == as){
+//             x=[]
+//             x.push(xxx[i])
+//   console.log(x)
 
-            x.forEach((d,i)=>{
-                let a = document.createElement("div");
-    a.classList.add(
-      "flex",
-      "justify-around",
-      "items-center",
-      "w-full",
-      "gap-3",
-    );
-    a.dataset.url = d.template;
-    a.dataset.artist =d.artist;
-    a.dataset.song = d.song;
-    a.dataset.img = d.img;
-    a.onclick = clickTrackHandler;
-    a.innerHTML = `
-                                <div>
-                                    <span class="text-lg font-extrabold text-black-one opacity-20">
-                                        ${i + 1}
-                                    </span>
-                                </div>
-                                <div>
-                                    <figure>
-                                        <img class="overflow-hidden object-cover rounded-2xl"
-                                            src="${
-                                              d.img
-                                            }" width="70" height="70" alt="">
-                                    </figure>
-                                </div>
-                                <div class="flex flex-col grow">
-                                    <div class=""><span class="text-lg text-black-one font-semibold">${
-                                      d.song
-                                    }</span></div>
-                                    <div><span class="text-lg text-black-one opacity-20 ">${
-                                      d.artist
-                                    }</span></div>
-                                </div>
-                                <div class="w-10 h-10 bg-red-one rounded-full flex justify-center items-center" >
-                                    <svg class="w-5 h-5 text-wite-one">
-                                        <use href="#play"></use>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <ul class="relative">
-                                        <li class="group">
-                                            <span>
-                                                <svg class="size-6 text-black-one">
-                                                    <use href="#elipsis"></use>
-                                                </svg>
-                                            </span>
-                                            <ul class="absolute left-[-100px] w-30 rounded-2xl bg-white opacity-0 group-hover:opacity-100 cursor-pointer" onclick="playlistadd(this)">
-                                            <li>
-                                                add to play list
-                                            </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-  `;
-  artistEelectE.appendChild(a)
-            })
-        }
+//             x.forEach((d,i)=>{
+//                 let a = document.createElement("div");
+//     a.classList.add(
+//       "flex",
+//       "justify-around",
+//       "items-center",
+//       "w-full",
+//       "gap-3",
+//     );
+//     a.dataset.url = d.template;
+//     a.dataset.artist =d.artist;
+//     a.dataset.song = d.song;
+//     a.dataset.img = d.img;
+//     a.onclick = clickTrackHandler;
+//     a.innerHTML = `
+//                                 <div>
+//                                     <span class="text-lg font-extrabold text-black-one opacity-20">
+//                                         ${i + 1}
+//                                     </span>
+//                                 </div>
+//                                 <div>
+//                                     <figure>
+//                                         <img class="overflow-hidden object-cover rounded-2xl"
+//                                             src="${
+//                                               d.img
+//                                             }" width="70" height="70" alt="">
+//                                     </figure>
+//                                 </div>
+//                                 <div class="flex flex-col grow">
+//                                     <div class=""><span class="text-lg text-black-one font-semibold">${
+//                                       d.song
+//                                     }</span></div>
+//                                     <div><span class="text-lg text-black-one opacity-20 ">${
+//                                       d.artist
+//                                     }</span></div>
+//                                 </div>
+//                                 <div class="w-10 h-10 bg-red-one rounded-full flex justify-center items-center" >
+//                                     <svg class="w-5 h-5 text-wite-one">
+//                                         <use href="#play"></use>
+//                                     </svg>
+//                                 </div>
+//                                 <div>
+//                                     <ul class="relative">
+//                                         <li class="group">
+//                                             <span>
+//                                                 <svg class="size-6 text-black-one">
+//                                                     <use href="#elipsis"></use>
+//                                                 </svg>
+//                                             </span>
+//                                             <ul class="absolute left-[-100px] w-30 rounded-2xl bg-white opacity-0 group-hover:opacity-100 cursor-pointer" onclick="playlistadd(this)">
+//                                             <li>
+//                                                 add to play list
+//                                             </li>
+//                                             </ul>
+//                                         </li>
+//                                     </ul>
+//                                 </div>
+//   `;
+//   artistEelectE.appendChild(a)
+//             })
+//         }
 
-    })
-}
+//     })
+// }
